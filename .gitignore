@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.env
+.env.local
+public/assets/uploads/
+npm-debug.log*
+
+/lib/generated/prisma
+.claude/settings.local.json
