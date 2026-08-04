@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings — Touch Techhub Admin</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-admin-page="settings">
+  <div class="admin-layout">
+    <div id="admin-sidebar-placeholder"></div>
+
+    <main class="admin-content">
+      <header class="admin-content__header">
+        <div>
+          <a href="/admin.html" class="admin-content__back-link">&larr; Back to Products</a>
+          <h1 class="admin-content__title">Settings</h1>
+        </div>
+      </header>
+
+      <div style="display: flex; flex-direction: column; gap: 24px; max-width: 560px;">
+        <section class="card-section">
+          <h3>Store Settings</h3>
+          <div id="store-settings-alert"></div>
+          <form id="store-settings-form">
+            <div class="form-group">
+              <label for="setting-tax-rate" class="form-label">Tax Rate</label>
+              <input type="number" id="setting-tax-rate" class="form-input" min="0" max="1" step="0.001" required>
+              <span style="font-size: 11.5px; color: var(--color-text-light);">Decimal fraction, e.g. 0.08 for 8%.</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="setting-shipping-fee" class="form-label">Flat Shipping Fee ($)</label>
+                <input type="number" id="setting-shipping-fee" class="form-input" min="0" step="0.01" required>
+              </div>
+              <div class="form-group">
+                <label for="setting-free-shipping" class="form-label">Free Shipping Threshold ($)</label>
+                <input type="number" id="setting-free-shipping" class="form-input" min="0" step="0.01" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="setting-low-stock" class="form-label">Low Stock Threshold (units)</label>
+              <input type="number" id="setting-low-stock" class="form-input" min="0" step="1" required>
+            </div>
+            <button type="submit" class="btn btn--primary">Save Store Settings</button>
+          </form>
+        </section>
+
+        <section class="card-section">
+          <h3>Change Password</h3>
+          <div id="password-alert"></div>
+          <form id="password-form">
+            <div class="form-group">
+              <label for="current-password" class="form-label">Current Password</label>
+              <input type="password" id="current-password" class="form-input" required autocomplete="current-password">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="new-password" class="form-label">New Password</label>
+                <input type="password" id="new-password" class="form-input" required autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label for="confirm-new-password" class="form-label">Confirm New Password</label>
+                <input type="password" id="confirm-new-password" class="form-input" required autocomplete="new-password">
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary">Update Password</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/admin-settings.js"></script>
+</body>
+</html>
