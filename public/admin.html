@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard — Touch Techhub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-admin-page="products">
+  <div class="admin-layout">
+    <div id="admin-sidebar-placeholder"></div>
+
+    <main class="admin-content">
+      <header class="admin-content__header">
+        <div>
+          <a href="/home.html" class="admin-content__back-link">&larr; Back to Storefront</a>
+          <h1 class="admin-content__title">Dashboard</h1>
+        </div>
+        <div class="admin-content__actions">
+          <a href="/admin-product.html?action=add" class="btn btn--primary">+ Add Product</a>
+        </div>
+      </header>
+
+      <section class="stats-grid" aria-label="Quick statistics">
+        <div class="stat-card">
+          <div class="stat-card__icon">&#128230;</div>
+          <div class="stat-card__data">
+            <p class="stat-card__value" id="stat-total">0</p>
+            <p class="stat-card__label">Total Products</p>
+            <p class="stat-card__subtext">Catalog size</p>
+          </div>
+        </div>
+        <div class="stat-card stat-card--warning">
+          <div class="stat-card__icon">&#9888;</div>
+          <div class="stat-card__data">
+            <p class="stat-card__value" id="stat-low-stock">0</p>
+            <p class="stat-card__label">Low Stock Items</p>
+            <p class="stat-card__subtext">Requires attention</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon">&#9989;</div>
+          <div class="stat-card__data">
+            <p class="stat-card__value" id="stat-active">0</p>
+            <p class="stat-card__label">Active Listings</p>
+            <p class="stat-card__subtext">In-stock &amp; visible</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon">&#128273;</div>
+          <div class="stat-card__data">
+            <p class="stat-card__value" id="stat-categories">0</p>
+            <p class="stat-card__label">Categories</p>
+            <p class="stat-card__subtext">Active groups</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-catalog">
+        <div class="admin-catalog__header">
+          <h2 class="admin-catalog__title">Inventory Catalog</h2>
+          <p class="admin-catalog__desc">Manage and track your products, prices, and stock inventory.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="catalog-table">
+            <thead>
+              <tr>
+                <th class="catalog-table__th">Product</th>
+                <th class="catalog-table__th">Category</th>
+                <th class="catalog-table__th">SKU</th>
+                <th class="catalog-table__th">Price</th>
+                <th class="catalog-table__th">Stock</th>
+                <th class="catalog-table__th">Status</th>
+                <th class="catalog-table__th text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="catalog-body"></tbody>
+          </table>
+        </div>
+
+        <div class="catalog-pagination">
+          <span id="catalog-count">Showing 0 entries</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>
