@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop — Touch Techhub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-page="shop">
+  <div id="site-navbar"></div>
+
+  <main class="shop">
+    <div class="container shop__layout">
+      <aside class="shop-filters" id="shop-filters" aria-label="Product filters">
+        <div class="shop-filters__header">
+          <h2 class="shop-filters__title">Filters</h2>
+          <button type="button" class="shop-filters__clear" id="filter-clear">Clear all</button>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group__toggle"><span>Category</span></div>
+          <div class="filter-group__body">
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="cases"><span>Phone Cases</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="chargers"><span>Chargers</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="screen-protectors"><span>Screen Protectors</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="cables"><span>Cables</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="phones"><span>Phones</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="laptops"><span>Laptops</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="headsets"><span>Headsets</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="category" value="speakers"><span>Speakers</span></label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group__toggle"><span>Price Range</span></div>
+          <div class="filter-group__body">
+            <div class="filter-price">
+              <div class="filter-price__field"><label for="price-min">Min</label><input type="number" id="price-min" placeholder="$0" min="0" step="1"></div>
+              <span class="filter-price__sep">—</span>
+              <div class="filter-price__field"><label for="price-max">Max</label><input type="number" id="price-max" placeholder="$200" min="0" step="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group__toggle"><span>Rating</span></div>
+          <div class="filter-group__body">
+            <label class="filter-rating"><input type="radio" name="rating" value="5"><span>5 stars</span></label>
+            <label class="filter-rating"><input type="radio" name="rating" value="4"><span>4+ stars</span></label>
+            <label class="filter-rating"><input type="radio" name="rating" value="3"><span>3+ stars</span></label>
+          </div>
+        </div>
+      </aside>
+
+      <div class="shop-main">
+        <header class="shop-header">
+          <div class="shop-header__info">
+            <h1 class="shop-header__title">Mobile Accessories</h1>
+            <p class="shop-header__count" id="shop-count">Showing 0 items</p>
+          </div>
+          <div class="shop-header__sort">
+            <label for="shop-sort" class="visually-hidden">Sort products</label>
+            <select id="shop-sort" class="shop-sort">
+              <option value="featured">Sort by: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A–Z</option>
+              <option value="rating-desc">Rating: Highest</option>
+            </select>
+          </div>
+        </header>
+
+        <button type="button" class="shop-filters-mobile-btn" id="filters-mobile-btn" aria-expanded="false" aria-controls="shop-filters">Filters</button>
+
+        <div class="product-grid product-grid--3" id="product-grid"></div>
+        <p class="shop-empty" id="shop-empty" hidden>No products match your filters. Try adjusting or clearing filters.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/shop.js"></script>
+</body>
+</html>
