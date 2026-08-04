@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model cart_items {
+  id         Int       @id @default(autoincrement())
+  session_id String    @db.VarChar(255)
+  product_id Int
+  quantity   Int       @default(1)
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+  products   products  @relation(fields: [product_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([session_id, product_id], map: "uniq_session_product")
+}
+
+model order_items {
+  id         Int     @id @default(autoincrement())
+  order_id   Int
+  product_id Int
+  name       String  @db.VarChar(255)
+  unit_price Decimal @db.Decimal(10, 2)
+  quantity   Int
+  orders     orders  @relation(fields: [order_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model orders {
+  id           Int           @id @default(autoincrement())
+  user_id      Int
+  subtotal     Decimal       @db.Decimal(10, 2)
+  shipping_fee Decimal       @default(0) @db.Decimal(10, 2)
+  tax          Decimal       @default(0) @db.Decimal(10, 2)
+  total        Decimal       @db.Decimal(10, 2)
+  status       String        @default("paid") @db.VarChar(20)
+  created_at   DateTime?     @default(now()) @db.Timestamp(6)
+  order_items  order_items[]
+  users        users         @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model password_resets {
+  id         Int       @id @default(autoincrement())
+  user_id    Int
+  token      String    @unique @db.VarChar(64)
+  expires_at DateTime  @db.Timestamp(6)
+  used_at    DateTime? @db.Timestamp(6)
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+  users      users     @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model products {
+  id           Int          @id @default(autoincrement())
+  name         String       @db.VarChar(255)
+  sku          String       @unique @db.VarChar(100)
+  category     String       @db.VarChar(50)
+  price        Decimal      @db.Decimal(10, 2)
+  sale_price   Decimal?     @db.Decimal(10, 2)
+  stock        Int          @default(0)
+  rating       Int          @default(5)
+  review_count Int          @default(0)
+  description  String?
+  image        String?      @db.VarChar(255)
+  specs        String?
+  created_at   DateTime?    @default(now()) @db.Timestamp(6)
+  cart_items   cart_items[]
+}
+
+model settings {
+  key   String @id @db.VarChar(50)
+  value String @db.VarChar(255)
+}
+
+model users {
+  id              Int               @id @default(autoincrement())
+  username        String            @unique @db.VarChar(50)
+  email           String?           @unique @db.VarChar(255)
+  password        String            @db.VarChar(255)
+  role            String?           @default("user") @db.VarChar(20)
+  created_at      DateTime?         @default(now()) @db.Timestamp(6)
+  orders          orders[]
+  password_resets password_resets[]
+}
