@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Touch Techhub — Protect Your Tech with Precision</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-page="home">
+  <div id="site-navbar"></div>
+
+  <main class="home">
+    <section class="storefront-hero">
+      <div class="container storefront-hero__inner">
+
+        <aside class="storefront-sidebar" aria-label="Shop by category">
+          <nav class="storefront-sidebar__nav" id="storefront-sidebar-nav"></nav>
+        </aside>
+
+        <div class="storefront-banner">
+          <div class="storefront-banner__content">
+            <span class="hero__eyebrow">New Collection</span>
+            <h1 class="hero__title">Protect Your Tech with Precision.</h1>
+            <span class="hero__highlight">Free Shipping on Orders $150+</span>
+            <p class="hero__desc">Discover the next generation of mobile accessories. Engineered for durability, designed for the modern lifestyle.</p>
+            <div class="hero__actions">
+              <a href="/shop.html" class="btn btn--primary">Shop Collections</a>
+              <a href="#categories" class="btn btn--outline">View Specs</a>
+            </div>
+          </div>
+          <div class="storefront-banner__media">
+            <img src="/assets/images/hero-case.svg" alt="Titan Pro phone case — premium protection" class="hero__image">
+          </div>
+        </div>
+
+        <div class="storefront-side">
+          <div class="storefront-side__info">
+            <div class="storefront-side__info-row">
+              <span class="storefront-side__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              </span>
+              <div>
+                <strong>Free Shipping</strong>
+                <span>On orders over $150</span>
+              </div>
+            </div>
+            <div class="storefront-side__info-row">
+              <span class="storefront-side__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <div>
+                <strong>Secure Checkout</strong>
+                <span>Your data stays protected</span>
+              </div>
+            </div>
+            <div class="storefront-side__info-row">
+              <span class="storefront-side__info-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </span>
+              <div>
+                <strong>24/7 Support</strong>
+                <span>We're here to help</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="/shop.html" class="storefront-side__promo">
+            <span class="storefront-side__promo-title">Shop All Deals</span>
+            <span class="storefront-side__promo-sub">Browse the full catalog</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="category-strip" id="categories" aria-label="Shop by category">
+      <div class="container category-strip__inner">
+        <button type="button" class="category-strip__arrow category-strip__arrow--prev" id="category-strip-prev" aria-label="Scroll categories left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="category-strip__track" id="category-strip-track"></div>
+        <button type="button" class="category-strip__arrow category-strip__arrow--next" id="category-strip-next" aria-label="Scroll categories right">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="mobile-deals-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">On Sale</h2>
+          <a href="/shop.html" class="section-header__link">See All ›</a>
+        </div>
+        <div class="product-grid product-grid--4" id="on-sale-grid"></div>
+      </div>
+    </section>
+
+    <section class="mobile-deals-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Almost Gone</h2>
+          <a href="/shop.html" class="section-header__link">See All ›</a>
+        </div>
+        <div class="product-grid product-grid--4" id="low-stock-grid"></div>
+      </div>
+    </section>
+
+    <section class="top-sellers">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Top Sellers</h2>
+          <a href="/shop.html" class="section-header__link">See All ›</a>
+        </div>
+        <div class="product-grid product-grid--4" id="top-sellers-grid"></div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter__inner">
+        <div class="newsletter__content">
+          <h2 class="newsletter__title">Stay Ahead of the Curve</h2>
+          <p class="newsletter__desc">Join 50,000+ tech enthusiasts. Get early access to new drops and exclusive offers.</p>
+        </div>
+        <form class="newsletter__form" id="newsletter-form" novalidate>
+          <input type="email" name="email" class="newsletter__input" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn--primary newsletter__btn">Subscribe</button>
+        </form>
+        <p class="newsletter__feedback" id="newsletter-feedback" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/home.js"></script>
+</body>
+</html>
