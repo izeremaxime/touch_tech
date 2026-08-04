@@ -1,0 +1,38 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="/home.html" class="navbar__logo" aria-label="Touch Techhub — Home">
+      <span class="navbar__logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 13.29A9 9 0 1 1 11.21 3.5 7 7 0 0 0 21 13.29z"/>
+          <path d="M17.5 2.3l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z"/>
+        </svg>
+      </span>
+      <span class="navbar__logo-text">Touch Techhub</span>
+    </a>
+
+    <form class="navbar__search" id="navbar-search-form" action="/shop.html" method="get" role="search">
+      <input type="search" name="q" class="navbar__search-input" placeholder="Search for premium mobile accessories..." aria-label="Search products">
+      <button type="submit" class="navbar__search-btn">Search</button>
+    </form>
+
+    <nav class="navbar__nav" id="main-nav" aria-label="Main navigation">
+      <a href="/home.html" class="navbar__link" data-page="home">Home</a>
+      <a href="/shop.html" class="navbar__link" data-page="shop">Shop</a>
+      <a href="/account.html" class="navbar__link" data-page="account">Account</a>
+      <a href="/admin.html" class="navbar__link" id="nav-admin-link" data-page="admin" style="display:none; color: var(--color-accent); font-weight: 700;">Admin Panel</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="/cart.html" class="navbar__cart" data-page="cart" aria-label="Shopping cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="navbar__cart-badge" id="cart-badge" aria-hidden="true"></span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
