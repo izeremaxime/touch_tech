@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account — Touch Techhub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-page="account">
+  <div id="site-navbar"></div>
+
+  <main class="account-page" style="padding: 40px 0 72px;">
+    <div class="container">
+      <div id="account-alert"></div>
+
+      <div id="auth-view">
+        <div class="auth-tabs">
+          <button type="button" id="tab-login-btn" class="auth-tab-btn auth-tab-btn--active">Login</button>
+          <button type="button" id="tab-register-btn" class="auth-tab-btn">Register</button>
+        </div>
+
+        <div class="auth-panel">
+          <div class="auth-forms-wrap">
+            <form id="auth-login-form" class="auth-form">
+              <input type="hidden" name="login_role" id="login-role-input" value="user">
+
+              <div class="form-group">
+                <label class="form-label">Login As</label>
+                <div class="login-role-toggle">
+                  <button type="button" id="role-btn-user" class="login-role-btn login-role-btn--active">Customer</button>
+                  <button type="button" id="role-btn-admin" class="login-role-btn">Admin</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="login-username" class="form-label">Username</label>
+                <input type="text" id="login-username" name="username" class="form-input" placeholder="e.g. admin" required autocomplete="username">
+              </div>
+
+              <div class="form-group">
+                <label for="login-password" class="form-label">Password</label>
+                <input type="password" id="login-password" name="password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" style="height: 44px;">Login to Account</button>
+
+              <p style="text-align: center; margin-top: 16px;">
+                <a href="/forgot-password.html" style="font-size: 13px; font-weight: 600; color: var(--color-accent);">Forgot your password?</a>
+              </p>
+            </form>
+
+            <form id="auth-register-form" class="auth-form" style="display: none;">
+              <div class="form-group">
+                <label for="reg-username" class="form-label">Username</label>
+                <input type="text" id="reg-username" name="username" class="form-input" placeholder="Choose username" required autocomplete="username">
+              </div>
+              <div class="form-group">
+                <label for="reg-email" class="form-label">Email</label>
+                <input type="email" id="reg-email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+                <span style="font-size: 11.5px; color: var(--color-text-light);">Used to reset your password if you forget it.</span>
+              </div>
+              <div class="form-group">
+                <label for="reg-password" class="form-label">Password</label>
+                <input type="password" id="reg-password" name="password" class="form-input" placeholder="Min. 6 characters" required autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label for="reg-confirm-password" class="form-label">Confirm Password</label>
+                <input type="password" id="reg-confirm-password" name="confirm_password" class="form-input" placeholder="Retype password" required autocomplete="new-password">
+              </div>
+              <button type="submit" class="btn btn--primary btn--full" style="height: 44px;">Create Free Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-grid" id="profile-view" style="display: none;">
+        <div class="profile-card">
+          <div class="profile-card__avatar" id="profile-initials"></div>
+          <div>
+            <h2 id="profile-username" style="font-size: 20px; margin-bottom: 4px;"></h2>
+            <span class="badge" id="profile-role"></span>
+          </div>
+          <div class="profile-card__details">
+            <div>Member since: <strong id="profile-member-since"></strong></div>
+            <div>Account ID: <strong id="profile-id"></strong></div>
+          </div>
+          <button type="button" id="logout-btn" class="btn btn--outline btn--full" style="border-color: var(--color-danger); color: var(--color-danger);">Logout</button>
+        </div>
+
+        <div class="profile-content">
+          <div class="admin-portal-alert" id="admin-portal-alert" style="display: none;">
+            <div>
+              <h3 style="font-size: 18px; margin-bottom: 6px;">Administrative Account Detected</h3>
+              <p style="color: var(--color-text-muted); font-size: 14.5px;">You are logged in as an administrator. You have full access to add, update, and delete products from the database catalog.</p>
+            </div>
+            <a href="/admin.html" class="btn btn--primary">Go to Admin Panel</a>
+          </div>
+
+          <section class="card-section">
+            <h3>Change Password</h3>
+            <form id="change-password-form" class="auth-form" style="max-width: 420px;">
+              <div class="form-group">
+                <label for="current-password" class="form-label">Current Password</label>
+                <input type="password" id="current-password" name="currentPassword" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+              </div>
+              <div class="form-group">
+                <label for="new-password" class="form-label">New Password</label>
+                <input type="password" id="new-password" name="newPassword" class="form-input" placeholder="Min. 6 characters" required autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label for="confirm-new-password" class="form-label">Confirm New Password</label>
+                <input type="password" id="confirm-new-password" name="confirmNewPassword" class="form-input" placeholder="Retype new password" required autocomplete="new-password">
+              </div>
+              <button type="submit" class="btn btn--primary" style="height: 44px;">Update Password</button>
+            </form>
+          </section>
+
+          <section class="card-section">
+            <h3>Your Orders</h3>
+            <div id="orders-body"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/account.js"></script>
+</body>
+</html>
