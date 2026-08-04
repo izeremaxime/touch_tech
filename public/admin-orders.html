@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orders — Touch Techhub Admin</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-admin-page="orders">
+  <div class="admin-layout">
+    <div id="admin-sidebar-placeholder"></div>
+
+    <main class="admin-content">
+      <header class="admin-content__header">
+        <div>
+          <a href="/admin.html" class="admin-content__back-link">&larr; Back to Products</a>
+          <h1 class="admin-content__title">Orders</h1>
+        </div>
+      </header>
+
+      <div id="orders-alert"></div>
+
+      <section class="admin-catalog">
+        <div class="admin-catalog__header">
+          <h2 class="admin-catalog__title">Customer Orders</h2>
+          <p class="admin-catalog__desc">Review orders and update their fulfillment status. Cancelling an order restocks its items.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="catalog-table">
+            <thead>
+              <tr>
+                <th class="catalog-table__th">Order</th>
+                <th class="catalog-table__th">Customer</th>
+                <th class="catalog-table__th">Date</th>
+                <th class="catalog-table__th text-right">Total</th>
+                <th class="catalog-table__th">Status</th>
+                <th class="catalog-table__th text-right">Details</th>
+              </tr>
+            </thead>
+            <tbody id="orders-body"></tbody>
+          </table>
+        </div>
+
+        <div class="catalog-pagination">
+          <span id="orders-count">Showing 0 orders</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/admin-orders.js"></script>
+</body>
+</html>
