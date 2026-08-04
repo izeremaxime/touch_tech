@@ -1,0 +1,22 @@
+{
+  "name": "touch-techhub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "next": "^14.2.5",
+    "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "prisma": "^7.9.1"
+  }
+}
