@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Details — Touch Techhub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-page="shop">
+  <div id="site-navbar"></div>
+
+  <main class="product-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/home.html" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__item"><a href="/shop.html" class="breadcrumb__link">Shop</a></li>
+          <li class="breadcrumb__item"><a href="/shop.html" id="breadcrumb-category" class="breadcrumb__link">Category</a></li>
+          <li class="breadcrumb__item breadcrumb__item--active" id="breadcrumb-name" aria-current="page">Product</li>
+        </ol>
+      </nav>
+
+      <section class="product-detail">
+        <div class="product-detail__gallery">
+          <div class="product-gallery">
+            <div class="product-gallery__main">
+              <span id="gallery-badge"></span>
+              <img src="" alt="" id="main-product-image" class="product-gallery__main-img">
+            </div>
+            <div class="product-gallery__thumbnails">
+              <button class="product-gallery__thumb product-gallery__thumb--active" aria-label="View product image 1"><img src="" alt=""></button>
+              <button class="product-gallery__thumb" aria-label="View product image 2" style="filter: hue-rotate(45deg);"><img src="" alt=""></button>
+              <button class="product-gallery__thumb" aria-label="View product image 3" style="filter: hue-rotate(90deg);"><img src="" alt=""></button>
+              <button class="product-gallery__thumb" aria-label="View product image 4" style="filter: brightness(0.8);"><img src="" alt=""></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-detail__info">
+          <div class="product-info">
+            <span class="product-info__cat" id="product-cat"></span>
+            <h1 class="product-info__title" id="product-title"></h1>
+
+            <div class="product-info__rating">
+              <div class="product-info__stars" id="product-stars"></div>
+              <span class="product-info__review-count" id="product-review-count"></span>
+            </div>
+
+            <div class="product-info__price-row" id="product-price-row"></div>
+
+            <div class="product-info__description"><p id="product-description"></p></div>
+
+            <div class="product-info__options">
+              <div class="option-selector">
+                <span class="option-selector__label">Color: <strong id="selected-color-label">Amber Orange</strong></span>
+                <div class="color-swatches">
+                  <button type="button" class="color-swatch color-swatch--active" style="background-color: var(--color-accent);" data-color="Amber Orange" aria-label="Amber Orange"></button>
+                  <button type="button" class="color-swatch" style="background-color: var(--color-charcoal);" data-color="Charcoal Gray" aria-label="Charcoal Gray"></button>
+                  <button type="button" class="color-swatch" style="background-color: #556b2f;" data-color="Olive Green" aria-label="Olive Green"></button>
+                  <button type="button" class="color-swatch" style="background-color: #3b5998;" data-color="Navy Blue" aria-label="Navy Blue"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-info__action">
+              <div class="quantity-stepper">
+                <button type="button" class="quantity-stepper__btn" id="qty-minus" aria-label="Decrease quantity">-</button>
+                <input type="number" id="qty-input" class="quantity-stepper__input" value="1" min="1" max="99" aria-label="Quantity" readonly>
+                <button type="button" class="quantity-stepper__btn" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary product-info__cart-btn" id="add-to-cart-btn">Order via WhatsApp</a>
+            </div>
+
+            <div class="product-info__specs">
+              <h2 class="specs-heading">Technical Specifications</h2>
+              <table class="specs-table"><tbody id="specs-body"></tbody></table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-section">
+        <div class="section-header">
+          <h2 class="section-header__title">Customer Reviews</h2>
+        </div>
+        <div class="reviews-grid" id="reviews-grid"></div>
+      </section>
+
+      <section class="related-section">
+        <div class="section-header">
+          <h2 class="section-header__title">Complete Your Setup</h2>
+        </div>
+        <div class="product-grid product-grid--4" id="related-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/product.js"></script>
+</body>
+</html>
