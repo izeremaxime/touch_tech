@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Product — Touch Techhub</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-active-admin-page="products">
+  <div class="admin-layout">
+    <div id="admin-sidebar-placeholder"></div>
+
+    <main class="admin-content">
+      <header class="admin-content__header">
+        <div>
+          <a href="/admin.html" class="admin-content__back-link">&larr; Back to Products</a>
+          <h1 class="admin-content__title" id="form-title">Add New Product</h1>
+        </div>
+      </header>
+
+      <div id="form-alert"></div>
+
+      <section class="admin-form-wrap">
+        <form id="product-form" class="admin-form">
+          <div class="admin-form__grid">
+            <div class="admin-form__col">
+              <div class="form-group">
+                <label for="prod-name" class="form-label">Product Name</label>
+                <input type="text" id="prod-name" name="name" class="form-input" placeholder="e.g. Titan Pro MagSafe Case" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prod-sku" class="form-label">SKU Code</label>
+                  <input type="text" id="prod-sku" name="sku" class="form-input font-mono" placeholder="e.g. TA-TPM-15P" required>
+                </div>
+                <div class="form-group">
+                  <label for="prod-category" class="form-label">Category</label>
+                  <select id="prod-category" name="category" class="form-input form-select" required>
+                    <option value="cases">Phone Cases</option>
+                    <option value="chargers">Chargers</option>
+                    <option value="screen-protectors">Screen Protectors</option>
+                    <option value="cables">Cables</option>
+                    <option value="phones">Phones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="headsets">Headsets</option>
+                    <option value="speakers">Speakers</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prod-price" class="form-label">Regular Price ($)</label>
+                  <input type="number" id="prod-price" name="price" class="form-input" placeholder="0.00" min="0.01" step="0.01" required>
+                </div>
+                <div class="form-group">
+                  <label for="prod-sale-price" class="form-label">Sale Price ($ — Optional)</label>
+                  <input type="number" id="prod-sale-price" name="sale_price" class="form-input" placeholder="0.00" min="0.00" step="0.01">
+                </div>
+                <div class="form-group">
+                  <label for="prod-stock" class="form-label">Stock Quantity</label>
+                  <input type="number" id="prod-stock" name="stock" class="form-input" placeholder="0" min="0" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="prod-desc" class="form-label">Product Description</label>
+                <textarea id="prod-desc" name="description" class="form-input form-textarea" rows="6" placeholder="Describe the item's features..." required></textarea>
+              </div>
+            </div>
+
+            <div class="admin-form__col">
+              <div class="form-group">
+                <label class="form-label">Product Image</label>
+                <div class="form-image-upload">
+                  <div class="form-image-upload__preview" id="image-preview-box">
+                    <div class="form-image-upload__placeholder">No image uploaded</div>
+                  </div>
+                  <div class="form-image-upload__actions">
+                    <label class="btn btn--outline form-image-upload__btn">
+                      Choose File
+                      <input type="file" name="image" id="file-uploader" accept="image/*" class="visually-hidden">
+                    </label>
+                    <span class="form-image-upload__filename" id="upload-filename">Only JPEG, PNG, WEBP, or GIF (max 2MB)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Technical Specifications</label>
+                <div class="form-specs-card">
+                  <p class="form-specs-card__info">Provide key technical details. Leave fields empty if not applicable.</p>
+
+                  <div class="spec-row">
+                    <label for="spec-material" class="spec-label">Material / Composition</label>
+                    <input type="text" id="spec-material" name="specs[Material]" class="form-input" placeholder="e.g. Polycarbonate">
+                  </div>
+                  <div class="spec-row">
+                    <label for="spec-compatibility" class="spec-label">Device Compatibility</label>
+                    <input type="text" id="spec-compatibility" name="specs[Compatibility]" class="form-input" placeholder="e.g. iPhone 15 Pro">
+                  </div>
+                  <div class="spec-row">
+                    <label for="spec-weight" class="spec-label">Item Weight / Dimensions</label>
+                    <input type="text" id="spec-weight" name="specs[Weight]" class="form-input" placeholder="e.g. 42 grams">
+                  </div>
+                  <div class="spec-row">
+                    <label for="spec-other-key" class="spec-label">Custom Specification Name</label>
+                    <input type="text" id="spec-other-key" name="custom_spec_key" class="form-input form-input--compact" placeholder="e.g. Drop Protection">
+                    <input type="text" name="custom_spec_val" class="form-input form-input--compact mt-1" placeholder="e.g. Up to 13 feet">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-form__actions">
+            <button type="submit" class="btn btn--primary" id="submit-btn">Publish Product</button>
+            <a href="/admin.html" class="btn btn--outline">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/admin-product.js"></script>
+</body>
+</html>
